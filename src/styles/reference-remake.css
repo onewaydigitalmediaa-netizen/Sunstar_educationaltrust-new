@@ -1,0 +1,215 @@
+/* SUN STAR image-reference remake — final visual layer, Nov 2026.
+   Exact brand hex: #0DA3CE #076B8A #FDC21E #E6F6FB #FFFFFF.
+   Designed to be additive: routes, college data and existing interaction stay intact. */
+:root{
+ --primary:#0DA3CE;--primary-dark:#076B8A;--primary-darker:#076B8A;
+ --yellow:#FDC21E;--yellow-soft:#FFF6D6;--navy:#076B8A;
+ --ink:#142C49;--muted:#547286;--line:#D1EAF4;
+ --surface:#F7FCFF;--white:#fff;
+ --ref-gradient:linear-gradient(115deg,#F0FCFF 0%,#DDF7FF 26%,#B4EBFC 54%,#E6F9FF 79%,#FFF8DF 100%);
+ --ref-glass:linear-gradient(140deg,rgba(255,255,255,.79),rgba(232,249,255,.60));
+ --ref-shadow:0 18px 48px rgba(6,107,138,.12),inset 0 1px 0 rgba(255,255,255,.95);
+ --radius:22px;
+}
+body{background:#E9F9FE;color:#142C49}
+#root{overflow-x:clip}
+.container{width:min(1250px,calc(100% - 64px))}
+main#main-content{background-color:#E6F6FB;background-image:radial-gradient(ellipse at 8% 10%,rgba(13,163,206,.22),transparent 48%),radial-gradient(ellipse at 90% 22%,rgba(253,194,30,.13),transparent 30%),radial-gradient(ellipse at 65% 70%,rgba(13,163,206,.13),transparent 60%),linear-gradient(118deg,#F3FCFF 0%,#DCF6FF 45%,#F5FCFF 75%,#EAF8FE 100%);background-size:140% 140%,130% 130%,130% 130%,100% 100%;animation:sunstar-mesh 26s ease-in-out infinite alternate}
+/* Top bar and floating glass navigation, matching the supplied concept */
+.top-strip{height:26px;background:#076B8A;border-bottom:1px solid rgba(255,255,255,.22)}
+.site-header{height:auto;min-height:88px;position:sticky;top:0;z-index:70;background:linear-gradient(90deg,rgba(225,249,255,.93),rgba(255,255,255,.96),rgba(234,250,255,.93));border-bottom:1px solid rgba(255,255,255,.9);box-shadow:0 12px 35px rgba(7,107,138,.08);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
+.site-header .nav-inner{min-height:88px}
+.site-header .brand{border-radius:16px;background:rgba(255,255,255,.85);box-shadow:0 7px 21px rgba(7,107,138,.08);padding:5px 9px}
+.site-header .brand img{width:165px;height:auto;max-height:67px}
+.desktop-nav a,.desktop-nav .college-nav-toggle{color:#173954;font-weight:750}
+.desktop-nav a.nav-active,.desktop-nav .college-nav-toggle.nav-active{color:#076B8A}
+.nav-actions .nav-enquire,.btn-yellow,.sun-ref-button-yellow{border-color:#FFC93A;background:linear-gradient(180deg,#FFE06B 0%,#FDC21E 62%,#F5B000 100%);color:#142C49;box-shadow:0 9px 22px rgba(224,168,0,.22)}
+.nav-actions .nav-enquire:hover,.btn-yellow:hover,.sun-ref-button-yellow:hover{background:linear-gradient(180deg,#FFEB97,#FDC21E);box-shadow:0 12px 27px rgba(224,168,0,.31)}
+.site-header .nav-wa{background:rgba(231,255,244,.92);border:1px solid #C7EFE0}
+.btn-primary{background:linear-gradient(120deg,#076B8A,#0DA3CE);color:white;box-shadow:0 10px 26px rgba(7,107,138,.19)}
+.btn-primary:hover{background:linear-gradient(120deg,#075C78,#0DA3CE)}
+.btn-outline{background:rgba(255,255,255,.76);color:#076B8A;border:1px solid #B5E3F2}
+.btn{border-radius:13px}
+/* New homepage hero */
+.sun-ref-hero{position:relative;isolation:isolate;overflow:hidden;padding:56px 0 30px;background:radial-gradient(ellipse at 73% 24%,rgba(15,194,245,.42),transparent 48%),radial-gradient(ellipse at 0% 42%,rgba(109,215,251,.35),transparent 48%),radial-gradient(ellipse at 97% 90%,rgba(253,194,30,.23),transparent 35%),var(--ref-gradient)}
+.sun-ref-hero:before,.sun-ref-services:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.52;background-image:radial-gradient(ellipse 600px 300px at 16% 74%,rgba(255,255,255,.48),transparent 85%),radial-gradient(ellipse 500px 400px at 90% 15%,rgba(255,255,255,.35),transparent 80%)}
+.sun-ref-ambient{position:absolute;pointer-events:none;border-radius:50%;filter:blur(5px);will-change:transform;animation:sunRefFloat 18s ease-in-out infinite alternate}
+.sun-ref-ambient-one{width:min(46vw,650px);height:min(46vw,650px);background:radial-gradient(circle,rgba(84,213,255,.20),transparent 68%);top:-18%;left:35%}
+.sun-ref-ambient-two{width:340px;height:340px;background:radial-gradient(circle,rgba(253,194,30,.22),transparent 69%);bottom:-150px;right:-80px;animation-delay:-6s}
+@keyframes sunRefFloat{from{transform:translate3d(-4%,3%,0)}to{transform:translate3d(8%,-5%,0)}}
+.sun-ref-hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.08fr .92fr;gap:28px;align-items:center;min-height:510px}
+.sun-ref-copy{position:relative;z-index:3}
+.sun-ref-pill,.sun-ref-trust-tags span,.sun-ref-float,.sun-ref-facts,.sun-ref-search-glass{background:var(--ref-glass);border:1px solid rgba(255,255,255,.88);box-shadow:var(--ref-shadow);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.sun-ref-pill{display:inline-flex;align-items:center;gap:9px;padding:10px 16px;border-radius:60px;color:#153657;font-size:12px;font-weight:800;margin-bottom:28px}
+.sun-ref-pill svg{color:#E0A800}
+.sun-ref-copy h1{color:#0D2E54;font-size:clamp(44px,4.7vw,70px);letter-spacing:-.052em;line-height:1.1;margin:0 0 23px;font-weight:800}
+.sun-ref-copy h1 span{background:linear-gradient(125deg,#076B8A,#0DA3CE);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sun-ref-copy>p{max-width:620px;font-size:clamp(15px,1.35vw,18px);color:#24475F;line-height:1.74;margin:0 0 22px}
+.sun-ref-trust-tags{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 29px}
+.sun-ref-trust-tags span{display:inline-flex;align-items:center;gap:7px;padding:10px 12px;border-radius:14px;font-size:12px;font-weight:750}
+.sun-ref-trust-tags svg{color:#0DA3CE}
+.sun-ref-actions{display:flex;gap:12px;flex-wrap:wrap}
+.sun-ref-button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:49px;padding:12px 22px;border-radius:999px;font-size:13px;font-weight:800;text-align:center;transition:transform .25s ease,box-shadow .25s ease,background .25s ease;border:1px solid transparent}
+.sun-ref-button:hover{transform:translateY(-3px)}
+.sun-ref-button-outline{border-color:#8ADDF4;background:rgba(255,255,255,.65);color:#076B8A;box-shadow:0 7px 24px rgba(7,107,138,.08)}
+.sun-ref-button-outline:hover{background:#fff}
+.sun-ref-button-light{color:#076B8A;background:rgba(255,255,255,.9);border-color:rgba(255,255,255,.9)}
+.sun-ref-visual{position:relative;height:480px;display:flex;align-items:center;justify-content:center}
+.sun-ref-visual:before{content:"";position:absolute;inset:40px 6% 28px;border-radius:46% 54% 58% 42%/48% 40% 60% 52%;background:linear-gradient(130deg,rgba(13,163,206,.28),rgba(255,255,255,.46) 46%,rgba(253,194,30,.3));border:1px solid rgba(255,255,255,.8);transform:rotate(-8deg)}
+.sun-ref-photo-outline{position:relative;width:min(390px,78%);aspect-ratio:1/1.08;border:9px solid rgba(255,255,255,.88);overflow:hidden;border-radius:48% 52% 44% 56%/42% 45% 55% 58%;box-shadow:0 28px 70px rgba(7,107,138,.21),inset 0 1px white;transform:rotate(4deg)}
+.sun-ref-photo-outline img{width:100%;height:100%;object-fit:cover;object-position:center 30%;transform:rotate(-4deg) scale(1.14)}
+.sun-ref-float{position:absolute;z-index:3;display:flex;align-items:center;gap:10px;padding:13px 16px;border-radius:20px;color:#0C3453;animation:sunRefMini 5s ease-in-out infinite}
+.sun-ref-float>svg{color:#E0A800;flex:none}
+.sun-ref-float strong{display:block;font-size:15px;line-height:1.2}
+.sun-ref-float small{display:block;font-size:10px;color:#536D7D;margin-top:4px;max-width:180px}
+.sun-ref-float-top{top:15%;left:-1%}.sun-ref-float-bottom{bottom:11%;right:-2%;animation-delay:-2.4s}
+.sun-ref-float-bottom>svg{color:#0DA3CE}
+@keyframes sunRefMini{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.sun-ref-search-glass{position:relative;z-index:2;display:flex;align-items:center;gap:15px;padding:9px 10px 9px 20px;border-radius:19px;margin:5px auto 22px;max-width:930px}
+.sun-ref-search-glass>svg{color:#0DA3CE;flex:none}.sun-ref-search-glass input{flex:1;min-width:0;background:transparent;border:0;outline:0;padding:12px 0;font-size:14px;color:#142C49}
+.sun-ref-search-glass input::placeholder{color:#668293}
+.sun-ref-search-glass button{display:flex;align-items:center;gap:9px;background:linear-gradient(130deg,#076B8A,#0DA3CE);border:0;border-radius:12px;padding:14px 18px;font-weight:800;color:white}
+.sun-ref-search-glass:focus-within{outline:0}
+.sun-ref-facts{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-radius:24px;overflow:hidden;margin-bottom:5px;padding:22px 5px}
+.sun-ref-facts>div{display:flex;align-items:center;justify-content:center;gap:13px;padding:7px 15px;min-width:0}
+.sun-ref-facts>div+div{border-left:1px solid #B4E4F2}
+.sun-ref-fact-icon{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:rgba(227,248,255,.8);color:#0DA3CE;flex:none}
+.sun-ref-fact-icon svg{width:25px;height:25px}
+.sun-ref-facts strong{display:block;color:#112F51;font-size:clamp(16px,1.6vw,23px);font-weight:850;white-space:nowrap}
+.sun-ref-facts small{display:block;color:#33576F;font-size:11px;line-height:1.5}
+.sun-ref-services{position:relative;overflow:hidden;background:linear-gradient(130deg,rgba(227,247,255,.8),rgba(244,253,255,.75) 50%,rgba(225,246,255,.9));padding:72px 0 55px}
+.sun-ref-center-heading{text-align:center;position:relative;margin-bottom:34px}
+.sun-ref-eyebrow{display:inline-flex;align-items:center;gap:8px;color:#076B8A;font-size:11px;font-weight:900;letter-spacing:.12em}
+.sun-ref-eyebrow i{display:inline-block;width:12px;height:4px;border-radius:5px;background:#FDC21E}
+.sun-ref-center-heading h2,.sun-ref-section-top h2{margin:9px 0;font-size:clamp(34px,4vw,49px);color:#123252;letter-spacing:-.04em}
+.sun-ref-center-heading h2 span,.sun-ref-section-top h2 span{color:#0DA3CE}
+.sun-ref-center-heading p{margin:0;color:#526E81}
+.sun-ref-services-grid{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.sun-ref-service-card{position:relative;display:flex;flex-direction:column;align-items:flex-start;min-height:207px;padding:25px 22px;background:var(--ref-glass);border:1px solid rgba(255,255,255,.93);border-radius:23px;box-shadow:var(--ref-shadow);backdrop-filter:blur(16px);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.sun-ref-service-card:hover{transform:translateY(-7px);box-shadow:0 24px 48px rgba(7,107,138,.17);border-color:#85DDF2}
+.sun-ref-service-icon{display:grid;place-items:center;color:#0DA3CE;margin-bottom:15px}
+.sun-ref-service-card:nth-child(2) .sun-ref-service-icon{color:#E0A800}
+.sun-ref-service-card:nth-child(3) .sun-ref-service-icon{color:#076B8A}
+.sun-ref-service-card h3{font-size:18px;margin:0 0 8px;color:#142C49}
+.sun-ref-service-card p{font-size:13px;color:#4B6C81;line-height:1.55;margin:0 22px 0 0}
+.sun-ref-service-go{position:absolute;right:17px;bottom:17px;border:1px solid #BCE5F0;border-radius:50%;display:grid;place-items:center;color:#076B8A;background:rgba(255,255,255,.77);width:36px;height:36px}
+.sun-ref-featured{padding:66px 0 90px;background:transparent}
+.sun-ref-section-top{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:27px}
+.sun-ref-section-top p{margin:0;font-size:14px}
+.sun-ref-textlink{display:inline-flex;align-items:center;gap:7px;color:#076B8A;font-weight:800;font-size:13px}
+.sun-ref-featured-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:19px}
+.sun-ref-college-card{background:var(--ref-glass);border:1px solid rgba(255,255,255,.88);border-radius:23px;box-shadow:var(--ref-shadow);overflow:hidden;transition:transform .25s ease,box-shadow .25s ease}
+.sun-ref-college-card:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(7,107,138,.16)}
+.sun-ref-college-photo{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;background:#BCECFB}
+.sun-ref-college-photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.sun-ref-college-card:hover img{transform:scale(1.05)}
+.sun-ref-college-photo span{position:absolute;left:15px;bottom:12px;border-radius:100px;background:rgba(255,255,255,.88);padding:7px 12px;font-size:11px;font-weight:750;color:#0C4563;backdrop-filter:blur(10px)}
+.sun-ref-college-content{padding:20px 20px 22px}
+.sun-ref-college-content p{font-size:11px;margin:0 0 6px;color:#076B8A}
+.sun-ref-college-content h3{font-size:20px;line-height:1.3;color:#142C49;min-height:52px;margin:0 0 14px}
+.sun-ref-college-content>a{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;color:#076B8A}
+.sun-ref-college-banner{position:relative;display:grid;grid-template-columns:43% 1fr;overflow:hidden;align-items:stretch;margin-top:40px;min-height:300px;background:linear-gradient(125deg,#076B8A,#0DA3CE 70%,#65D8F9);border:1px solid rgba(255,255,255,.95);border-radius:28px;box-shadow:0 25px 65px rgba(7,107,138,.15)}
+.sun-ref-college-banner-image{position:relative;min-height:300px;overflow:hidden}
+.sun-ref-college-banner-image:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 65%,#076B8A 100%)}
+.sun-ref-college-banner-image img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.sun-ref-college-banner>div:last-child{align-self:center;padding:36px 40px 36px 26px;position:relative;color:white}
+.sun-ref-college-banner h2{color:white;font-size:clamp(27px,3vw,41px);margin:10px 0;line-height:1.12;max-width:590px}
+.sun-ref-college-banner p{color:#E0F8FF;font-size:13px;max-width:510px}
+.sun-ref-college-banner .sun-ref-eyebrow{color:#FFF2AF}
+.sun-ref-banner-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:17px}
+/* Unified image-reference glass language across every existing route */
+main .page-heading,main .enquiry-masthead{background:radial-gradient(ellipse at 87% 22%,rgba(253,194,30,.22),transparent 28%),radial-gradient(ellipse at 10% 78%,rgba(47,203,247,.26),transparent 46%),linear-gradient(117deg,#E7F9FF 0%,#D0F2FF 52%,#EFFBFF 100%);color:#123252}
+main .page-heading h1,main .page-heading h2{color:#0F3151}
+main .enquiry-masthead h1,main .enquiry-masthead h1 span{color:#103253}
+main .enquiry-masthead-copy>p{color:#3B6176}
+main .enquiry-trust-line span{color:#315C74}
+main .enquiry-kicker{color:#076B8A;background:rgba(255,255,255,.68);border-color:rgba(255,255,255,.95)}
+main .section-soft,main .course-explorer-section,main .faq-section,main .student-reviews,main .about-info-section{background:linear-gradient(130deg,rgba(229,248,255,.50),rgba(255,255,255,.35),rgba(210,243,255,.42))!important}
+main :is(.college-card,.course-category,.course-programme-card,.course-explorer-filters,.directory-filters,.service-card,.enquiry-panel,.about-contact-card,.about-purpose-card,.bangalore-college-card,.bangalore-course-card,.faq-item,.category-card,.student-review-card,.step-card,.detail-panel,.search-filters,.admission-step){background:var(--ref-glass);border:1px solid rgba(255,255,255,.88);border-radius:20px;box-shadow:var(--ref-shadow);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+main :is(.college-card,.course-programme-card,.category-card,.service-card,.bangalore-college-card,.bangalore-course-card,.step-card):hover{border-color:#8ADEEF;box-shadow:0 22px 50px rgba(7,107,138,.16)}
+main :is(.directory-filters,.course-explorer-filters,.search-filters){background:rgba(255,255,255,.78);border-color:#D2ECF5}
+main input:not([type=checkbox]):not([type=radio]),main select,main textarea{border-color:#CCE8F3;background-color:rgba(250,254,255,.85);color:#15384F}
+main :is(input,select,textarea):focus-visible{outline:2px solid #0DA3CE;outline-offset:2px}
+main .course-level-switch button.is-active,main .course-category-count i,main .result-pill{accent-color:#0DA3CE}
+main .course-level-switch button.is-active{background:linear-gradient(110deg,#076B8A,#0DA3CE);color:white}
+main .course-category-toggle{background:rgba(255,255,255,.36)}
+main .enquiry-aside-primary{background:linear-gradient(135deg,#076B8A,#0DA3CE)}
+main .enquiry-content-section{background:transparent}
+main .enquiry-masthead{padding-bottom:95px}
+main .enquiry-panel{background:linear-gradient(130deg,rgba(255,255,255,.91),rgba(231,248,255,.78));border:1px solid white}
+main .form-panel-heading h2 span{color:#0DA3CE}
+main .abroad-section{background:linear-gradient(120deg,#076B8A,#0DA3CE)}
+main .bottom-cta{background:linear-gradient(125deg,#076B8A,#0DA3CE 74%,#71D8F3)}
+main .college-art-photo,main .bangalore-campus-photo{transition:transform .55s ease}
+main .college-card:hover .college-art-photo,main .bangalore-college-card:hover .bangalore-campus-photo{transform:scale(1.045)}
+main .college-art-label,main .college-art-glass,main .college-art-category{backdrop-filter:blur(13px)}
+main .course-explorer-section{padding-top:64px}
+main .section{scroll-margin-top:115px}
+main .section-heading h2,main h2{color:#123252}
+main .impact-stats h2,main .abroad-section h2,main .bottom-cta h2,main .enquiry-aside-primary h3{color:white}
+main .impact-stats{background-color:#076B8A}
+main .impact-stats::before{background:linear-gradient(110deg,rgba(7,70,99,.86),rgba(7,107,138,.75),rgba(5,65,99,.88))}
+main .impact-stat-card{border:1px solid rgba(255,255,255,.38);background:rgba(225,249,255,.13);box-shadow:0 15px 50px rgba(3,49,77,.23)}
+main .impact-stat-card:hover{background:rgba(225,249,255,.22)}
+.sun-ref-campaign-section{padding-top:55px;background:transparent}
+.sun-ref-campaign-section .home-banner-carousel{max-width:1250px;margin:24px auto 0;border-radius:24px;box-shadow:var(--ref-shadow);border:1px solid white}
+/* Consistent nav/footer on nested pages */
+.college-nav-links{background:rgba(248,253,255,.97);backdrop-filter:blur(20px);border-color:#D3ECF4;border-radius:17px}
+.mobile-menu{background:linear-gradient(155deg,#FFFFFF,#E8F9FF)}
+.site-footer{background:#076B8A}
+/* Tablet + phone layout */
+@media(max-width:1050px){
+ .sun-ref-hero-grid{min-height:450px;grid-template-columns:1.05fr .95fr}
+ .sun-ref-visual{height:415px}
+ .sun-ref-float-top{left:-5%}.sun-ref-float-bottom{right:-2%}
+ .sun-ref-services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .sun-ref-facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .sun-ref-facts>div{justify-content:flex-start;padding:15px 25px}
+ .sun-ref-facts>div:nth-child(3){border-left:0}
+ .sun-ref-facts>div:nth-child(n+3){border-top:1px solid #B4E4F2}
+}
+@media(max-width:760px){
+ .container{width:min(100% - 32px,1250px)}
+ .sun-ref-hero{padding:36px 0 30px}
+ .sun-ref-hero-grid{grid-template-columns:1fr;gap:4px}
+ .sun-ref-copy h1{font-size:clamp(38px,8vw,60px)}
+ .sun-ref-visual{height:365px;max-width:510px;width:100%;margin:auto}
+ .sun-ref-photo-outline{width:min(310px,78%);aspect-ratio:1/1.02}
+ .sun-ref-float-top{left:0;top:9%}.sun-ref-float-bottom{right:0;bottom:8%}
+ .sun-ref-featured-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .sun-ref-college-banner{grid-template-columns:1fr}
+ .sun-ref-college-banner-image{height:230px;min-height:230px}
+ .sun-ref-college-banner-image:after{background:linear-gradient(0deg,#076B8A,transparent 65%)}
+ .sun-ref-college-banner>div:last-child{padding:24px}
+ .sun-ref-campaign-section .home-banner-carousel{border-radius:12px}
+}
+@media(max-width:540px){
+ .site-header .nav-inner{min-height:76px}
+ .sun-ref-hero{padding-top:25px}
+ .sun-ref-pill{font-size:10px;padding:9px 12px;margin-bottom:18px}
+ .sun-ref-copy h1{font-size:clamp(34px,10vw,46px);line-height:1.13}
+ .sun-ref-copy>p{font-size:14px}
+ .sun-ref-trust-tags{gap:7px;margin-bottom:20px}
+ .sun-ref-trust-tags span{padding:8px 10px;font-size:10px}
+ .sun-ref-actions{gap:9px}.sun-ref-button{min-height:45px;padding:11px 15px;font-size:12px}
+ .sun-ref-visual{height:300px}.sun-ref-photo-outline{width:245px}
+ .sun-ref-float{padding:9px 10px;border-radius:13px;gap:6px}.sun-ref-float>svg{width:20px;height:20px}.sun-ref-float strong{font-size:12px}.sun-ref-float small{font-size:9px;max-width:104px}
+ .sun-ref-float-top{top:8%;left:-1%}.sun-ref-float-bottom{bottom:9%;right:-1%}
+ .sun-ref-search-glass{padding:8px;gap:8px;border-radius:14px}.sun-ref-search-glass>svg{width:17px;margin-left:4px}
+ .sun-ref-search-glass input{font-size:12px}.sun-ref-search-glass button{font-size:11px;padding:12px 10px;white-space:nowrap}.sun-ref-search-glass button svg{display:none}
+ .sun-ref-facts{gap:0;padding:8px 0;border-radius:17px}
+ .sun-ref-facts>div{padding:13px 10px;gap:8px}.sun-ref-fact-icon{width:35px;height:35px}.sun-ref-fact-icon svg{width:19px;height:19px}.sun-ref-facts strong{font-size:15px;white-space:normal}.sun-ref-facts small{font-size:9px}
+ .sun-ref-services{padding:53px 0 35px}.sun-ref-center-heading h2,.sun-ref-section-top h2{font-size:33px}
+ .sun-ref-services-grid{gap:10px}.sun-ref-service-card{padding:17px 14px;min-height:202px;border-radius:16px}.sun-ref-service-icon{margin-bottom:11px}.sun-ref-service-icon svg{width:26px;height:26px}.sun-ref-service-card h3{font-size:15px}.sun-ref-service-card p{font-size:11px;margin-right:0}.sun-ref-service-go{width:28px;height:28px;right:10px;bottom:10px}
+ .sun-ref-featured{padding:47px 0 55px}.sun-ref-section-top{align-items:flex-start;flex-direction:column;gap:12px}
+ .sun-ref-featured-grid{grid-template-columns:1fr;gap:13px}
+ .sun-ref-college-content h3{min-height:0}
+ .sun-ref-college-banner{margin-top:24px}
+ .sun-ref-college-banner h2{font-size:27px}
+ .sun-ref-banner-actions{flex-direction:column;align-items:stretch}
+ .sun-ref-campaign-section .home-banner-carousel{border-radius:8px}
+}
+@media(prefers-reduced-motion:reduce){
+ main#main-content,.sun-ref-ambient,.sun-ref-float{animation:none!important}
+ .sun-ref-service-card,.sun-ref-college-card,.sun-ref-button,.sun-ref-college-photo img{transition:none!important}
+}
