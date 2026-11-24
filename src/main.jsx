@@ -10,6 +10,7 @@ import './styles/about-career.css';
 import './styles/home-carousel.css';
 import './styles/brand-accuracy.css';
 import './styles/reference-remake.css';
+import './styles/video-hero.css';
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode><BrowserRouter><App/></BrowserRouter></React.StrictMode>

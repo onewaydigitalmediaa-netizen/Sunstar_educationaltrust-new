@@ -31,8 +31,8 @@ export default function Header(){
  },[searchOpen]);
  useEffect(()=>{if(!open)return;const onKey=e=>{if(e.key==='Escape')setOpen(false)};document.addEventListener('keydown',onKey);const previous=document.body.style.overflow;document.body.style.overflow='hidden';return()=>{document.removeEventListener('keydown',onKey);document.body.style.overflow=previous}},[open]);
  return <>
-  <div className="top-strip"><div className="container top-inner top-inner-announcement"><div className={`top-ticker${reduceMotion?' is-static':''}`} role="region" aria-label="For Admission Enquiry from Tamil Nadu and Bangalore, Call +91 9944204010  +91 9042964616"><div className="top-ticker-track">{tickerSequence()}{tickerSequence(true)}</div></div></div></div>
-  <header className="site-header reference-navbar"><div className="container nav-inner">
+  <div className="top-strip"><div className="container top-inner top-inner-announcement"><div className={`top-ticker${reduceMotion?' is-static':''}`} role="region" aria-label="For Admission Enquiry from Tamil Nadu and Bangalore, Call +91 9944204010  +91 9042964616"><div className="top-ticker-track">{tickerSequence()}</div></div></div></div>
+  <header className={`site-header reference-navbar${loc.pathname==='/'?' home-video-navbar':''}`}><div className="container nav-inner">
    <Link to="/" className="brand" aria-label="Sun Star Educational Trust homepage"><img src="/assets/sunstar-logo.png" alt="SUN STAR Educational Trust"/><span className="brand-caption">EDUCATIONAL TRUST</span></Link>
    <nav className="desktop-nav" aria-label="Main navigation">{links.map(([href,label])=>href==='/colleges'?<ExploreCollegesNav key={href}/>:<NavLink key={href} end={href==='/'||href==='/services'} to={href} className={({isActive})=>navIsActive(href,isActive,loc.pathname,loc.hash)?'nav-active':''}>{({isActive})=>{const active=navIsActive(href,isActive,loc.pathname,loc.hash);return <>{label}{active&&<motion.span className="nav-indicator" layoutId="nav-indicator" transition={{type:'spring',stiffness:480,damping:34}}/>}</>}}</NavLink>)}</nav>
    <div className="nav-actions">

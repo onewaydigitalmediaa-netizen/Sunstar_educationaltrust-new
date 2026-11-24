@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {ArrowUpRight,Search,GraduationCap,Building2,BookOpen,Stethoscope,HeartPulse,FlaskConical,Landmark,CheckCircle2,FileText,PhoneCall,ChevronRight,MessageCircle,MapPinned} from 'lucide-react';
 import {phoneUrl} from '../data/site.js';
-import HomeBannerCarousel from '../components/HomeBannerCarousel.jsx';
 import ReferenceHomeHero from '../components/ReferenceHomeHero.jsx';
 import Reveal from '../components/Reveal.jsx';
 import FAQSection from '../components/FAQSection.jsx';
@@ -18,7 +17,6 @@ const categories=[
 ];
 export default function Home(){
  return <>
-  <HomeBannerCarousel/>
   <ReferenceHomeHero/>
   <ImpactStats/>
   <Reveal as="section" className="section" id="streams"><div className="container"><div className="section-heading"><div><span className="eyebrow">DISCOVER YOUR PATH</span><h2>Choose a field that <span>inspires you.</span></h2><p>From engineering to health sciences, find your ideal next step.</p></div><Link to="/courses" className="text-link">View all streams <ArrowUpRight size={17}/></Link></div><div className="category-grid">{categories.map(({name,desc,icon:Icon,tone})=><Link className={`category-card category-${tone}`} to={`/colleges?stream=${encodeURIComponent(name)}`} key={name}><span className="category-symbol"><Icon size={27} strokeWidth={1.7}/></span><strong>{name}</strong><small>{desc}</small><span className="category-arrow"><ArrowUpRight size={19}/></span></Link>)}</div></div></Reveal>
